@@ -23,7 +23,7 @@ jobs:
         uses: luisgs7/pip-packages@v1
 
       - name: Run o black
-        run: black --check app
+        run: black --check section3
 
       - name: Run the pytest
         run: pytest
