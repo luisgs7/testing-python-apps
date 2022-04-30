@@ -1,0 +1,29 @@
+name: Continuos Integration
+
+on:
+  pull_request:
+    branches:
+      - main
+
+  push:
+
+jobs:
+  executar_jobs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Performs o checkout
+        uses: actions/checkout@v2
+
+      - name: Intall Python 3.8
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+
+      - name: Install pip and dependencies
+        uses: luisgs7/pip-packages@v1
+
+      - name: Run o black
+        run: black --check app
+
+      - name: Run the pytest
+        run: pytest
