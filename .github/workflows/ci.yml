@@ -2,7 +2,7 @@ name: Continuos Integration
 
 on:
   pull_request:
-    branches:
+    branches :
       - main
 
   push:
@@ -23,7 +23,7 @@ jobs:
         uses: luisgs7/pip-packages@v1
 
       - name: Run o black
-        run: black --check section3
+        run: black --check .
 
       - name: Run the pytest
         run: pytest
