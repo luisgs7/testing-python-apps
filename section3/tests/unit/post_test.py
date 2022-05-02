@@ -1,5 +1,5 @@
 from unittest import TestCase
-from section3.post import Post
+from post import Post
 
 
 class PostTest(TestCase):
