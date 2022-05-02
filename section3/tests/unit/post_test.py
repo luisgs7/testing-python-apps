@@ -11,6 +11,6 @@ class PostTest(TestCase):
 
     def test_json(self):
         p = Post("Test", "Test Content")
-        expected = {"Title": "Test", "Content": "Test Content"}
+        expected = {"title": "Test", "content": "Test Content"}
 
         self.assertDictEqual(p.json(), expected)

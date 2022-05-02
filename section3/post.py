@@ -5,6 +5,6 @@ class Post:
 
     def json(self):
         return {
-            "Title": self.title,
-            "Content": self.content,
+            "title": self.title,
+            "content": self.content,
         }
