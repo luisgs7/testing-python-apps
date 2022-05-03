@@ -21,7 +21,21 @@ def menu():
     # Eventually exit
 
     print_blogs()
-    selection = input(MENU_PROMPT)  # noqa: F841
+    selection = input(MENU_PROMPT)
+
+    while selection != "q":
+        if selection == "c":
+            ask_create_blog()
+
+        elif selection == "1":
+            print_blogs()
+
+        elif selection == "r":
+            ask_read_blog()
+
+        elif selection == "p":
+            ask_create_post()
+        selection = input(MENU_PROMPT)
 
 
 def print_blogs():
@@ -52,4 +66,8 @@ def print_post(post):
 
 
 def ask_create_post():
-    pass
+    blog_name = input("Enter the blog title you want to write a post in: ")
+    title = input("Enter your post title: ")
+    content = input("Enter your post content: ")
+
+    blogs[blog_name].create_post(title, content)
